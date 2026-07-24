@@ -30,17 +30,6 @@ Analytical SQL Queries → Business Insights
 | `customers_1000.csv` | 1,000 | Customer demographic and registration data |
 | `orders_5000.csv` | 5,000 | Order-level transaction data |
 
-### Data Quality Issues Found
-
-| Issue | Count |
-|---|---|
-| Duplicate `customer_id` records | 39 |
-| Missing/blank emails | 41 |
-| Missing/blank states | 258 |
-| Invalid (negative) customer ID | 1 |
-| Duplicate `order_id` records | 153 |
-| Missing `order_amount` | 254 |
-
 ## Transformations Applied
 
 - **Deduplication:** one row per `customer_id` and one per `order_id`, keeping the most recent record (`ROW_NUMBER()` window function).
